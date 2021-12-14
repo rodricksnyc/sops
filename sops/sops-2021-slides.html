@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="shortcut icon" href="../favicon.ico"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <title>SOPS 2021</title>
+  <link rel="stylesheet" href="../events.css">
+  <link rel="stylesheet" href="../vendorlibs/animate.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="../vendorlibs/font-awesome-pro/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
+</head>
+
+<style>
+header {
+  /* background: rgb(8,73,126);
+  background: linear-gradient(90deg, rgba(8,73,126,1) 0%, rgba(18,103,142,1) 19%, rgba(25,123,153,1) 37%); */
+  /* padding: 1em 1em 1em 2em; */
+  height: auto;
+  min-height: 46px;
+  background: #a7a7a7;
+}
+@media (min-width: 48em){
+  .navbar {
+    display: -webkit-box;
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+  }
+  .navbar div {
+    display: -webkit-box;
+    display: flex;
+  }
+  .navbar .link {
+    width: auto;
+    min-width: 92px;
+  }
+
+}
+
+.navbar {
+  position: relative;
+  min-height: 45px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+.start {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 80%;
+  padding: 1em 1em 1em 2em;
+  /* background: linear-gradient(90deg, rgba(8,73,126,1) 0%, rgba(18,103,142,1) 19%, rgba(25,123,153,1) 37%); */
+  min-height: 46px;
+  background: #532683;
+  top: -1px;
+}
+.brand {
+  display: inline-block;
+  margin-right: 1em;
+  text-decoration: none;
+}
+.start:after {
+  width: 110%;
+  background: #1caece;
+  position: absolute;
+  height: 100%;
+  content: ' ';
+  left: -2%;
+  top: 0;
+  transform: skew(30deg);
+  -webkit-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.54);
+  box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.54);
+}
+
+.abso {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  padding: 1em 1em 1em 2em;
+  max-width: 20%;
+  min-height: 46px;
+}
+.navbar .link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0em 1em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding-top: .2em;
+}
+
+footer {
+  /* background: #1a2a57; */
+  padding: 12px 0px;
+  background: #06477d;
+  height: 70px;
+}
+.main-wrapper {
+  min-height: inherit;
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+  background-image: none;
+  padding-top: 2%
+}
+
+/* .greenline{
+height:100%;
+width:1px;
+background: #50ac48
+} */
+
+.line {
+  height:80vh;
+  border-right:1px solid #1caece
+}
+
+.logo{
+  max-width: 70%;
+  margin-bottom: 1em;
+  padding: 0;
+  margin-left: -2em;
+}
+
+
+@media (min-width: 1200px) {
+  .col-lg-offset-1 {
+    margin-left:3%;
+  }
+}
+
+h2{
+  color:#532683;
+  font-weight:700;
+  font-size:26px;
+  margin-bottom:0em
+}
+
+h1{
+  color:#532683;
+  font-weight:700;
+  font-size:40px
+}
+
+h3 {
+  color:#007abd;
+  margin-top: 0em;
+  font-weight:700;
+  max-width: 845px;
+}
+
+.vertical{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em 2em;
+  margin-left: 1em;
+
+}
+p, body {
+  color:#404040;
+}
+
+.vertical p{
+  /* max-width: 33em; */
+  margin: 1em 0em;
+  font-size: 16px;
+
+}
+
+.strong{
+  font-weight:600;
+  color:#343a40;
+  font-size: 16px;
+
+}
+.auth-control.access {
+  font-size: 14px;
+  border: none;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.15), 0px 0px 10px rgba(0,0,0,.1);
+  margin: 12px 0px 20px;
+}
+
+#passw{
+  padding:0;
+  margin:0
+}
+.auth-control {
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 4px);
+  padding: 2rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 1rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  max-width: 260px;
+  text-align: center;
+  min-width: 200px;
+}
+.btn-login {
+  margin: 1em 0em;
+  border-radius: 1rem;
+  max-width: 260px;
+  text-align: center;
+  min-width: 200px;
+
+}
+.blueColor{
+  color:#00467f
+}
+html{
+  overflow-x: hidden;
+}
+
+@media (min-width: 992px) and (max-width:1199px){
+  .col-md-offset-1 {
+    margin-left: 2%;
+  }
+}
+
+@media (max-width:991px){
+  .logo {
+    max-width: 100%;
+    margin-bottom: 1em;
+    padding: 0;
+    margin-left: -2em;
+  }
+}
+
+@media (max-width:767px){
+  .vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em 1em;
+  }
+  .line {
+    height:auto;
+  }
+}
+
+.link {
+  color: #007abd;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+
+
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  margin-left: -.5rem;
+  padding-left: 0.5rem;
+
+}
+
+.link:after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: calc(100% + 0.15rem);
+  width: 0;
+  height: 1px;
+  background-color: #007abd;
+  transition: width 0.3s ease-in-out;
+}
+
+.link:hover:after,
+.link:focus:after {
+  width: calc(100% - 0.5rem);
+}
+
+
+
+a i {
+  color: #06477d;
+}
+
+
+@media (min-width:992px){
+  a {
+    margin-left:3em
+  }
+}
+
+.red{
+  color: red;
+  font-size: 18px;
+  margin-right: 5px;
+
+}
+
+.mt-1{
+  margin-top:1em;
+}
+
+main {
+  min-height: calc(95vh - 60px);
+  position: relative;
+}
+.across {
+    margin-top: 45vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 25px;
+    position: relative;
+}
+.blueColor {
+    color: #007abd !important;
+}
+
+#myModal h4.navy {
+    color: #007abd;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #404040;
+    font-size: 18px;
+}
+
+.btn-login {
+    margin: 1em 0em;
+    border-radius: 1rem;
+    max-width: 260px;
+    text-align: center;
+    min-width: 240px;
+    background-color: #007abd;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.15), 0px 0px 10px rgba(0,0,0,.1);
+}
+
+.btn-login:active, .btn-login:focus, .btn-login:hover {
+    color: #007abd;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.15), 0px 0px 10px rgba(0,0,0,.1);
+}
+
+#myModal .form-control {
+    border: auto;
+    border: 1px solid #ccc;
+}
+
+#myModal .modal-header {
+    padding: 15px;
+    /* border-bottom: 1px solid #19497b; */
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #a7a7a7;
+}
+
+sup {
+    top: -.5em;
+    color: #007abd;
+    font-weight: 800;
+}
+
+</style>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <header>
+
+    <nav class="navbar">
+      <div class="start">
+
+      </div>
+
+      <div class="end abso">
+
+      </div>
+
+
+    </nav>
+
+  </header>
+  <main>
+    <div class="main-wrapper first">
+
+      <div class="row">
+
+        <div class="col-lg-2 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-xs-12 line">
+
+
+          <div class="greenline"></div>
+        </div>
+
+        <div class="col-lg-9 col-md-8 col-sm-9 col-xs-12">
+          <div class="vertical">
+            <img src="../images/header.png" class="img-responsive logo"  alt="Surveys on Patient Safety Culture logo">
+            <h3>New AHRQ SOPS<sup>&reg;</sup> Diagnostic Safety Supplemental Items for Medical Offices</h3>
+
+
+            <a class="mt-1" href="../images/ahrq-sops.pdf" target="_blank"><i class="fal fa-file-pdf red"></i> <span class="link">June 2, 2021 Slides</span></a>
+            <!-- <a href="images/2_Participant Tip Sheet_10-07-2020.pdf" target="_blank"><i class="fal fa-file-pdf red"></i> <span class="link">Participant Tip Sheet</span></a>
+            <a href="images/3a_Morning Panel Slides_10-07-2020.pdf" target="_blank"><i class="fal fa-file-pdf red"></i> <span class="link">Morning Panel Slides</span></a>
+            <a href="images/3b_Afternoon Panel Slides_10-07-2020.pdf" target="_blank"><i class="fal fa-file-pdf red"></i> <span class="link">Afternoon Panel Slides</span></a>
+            <a href="images/4_Speaker Bio Document_10-07-2020.pdf" target="_blank"><i class="fal fa-file-pdf red"></i> <span class="link">Speaker Bio Document</span></a>
+            <a href="images/5_Participant List_10-07-2020.pdf" target="_blank"><i class="fal fa-file-pdf red"></i> <span class="link">Participant List</span></a>
+          -->
+              <a href="mailto:DatabasesOnSafetyCulture@westat.com" class="blueColor across"><img src="../images/support_icon.svg" class="img-responsive" width="25" height="25" style="margin-right:5px">&nbsp;Contact support for any technical issues</a>
+
+<!-- <a href="" data-toggle="modal" data-target="#myModal" tabindex="0" aria-hidden="false" aria-label="Show Contact Form" role="button" class="blueColor across"><img src="../images/support_icon.svg" class="img-responsive" width="25" height="25" style="margin-right:5px">&nbsp;Contact support for any technical issues</a> -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="" tabindex="0" aria-hidden="false" aria-label="Close Contact Form" role="button" data-dismiss="modal"><button type="button" class="close">&times;</button></a>
+            <h4 class="navy modal-title text-center">
+              Contact Us
+            </h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" type="post" id="reused_form" >
+              <p> Describe any issues you are experiencing, and we'll respond as quickly as possible. </p>
+              <div class="form-group">
+                <label for="name"> Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required maxlength="50" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="email"> Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required maxlength="50" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="name"> Message:</label>
+                <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7"></textarea>
+              </div>
+              <!-- <center>
+              <button type="submit" class="btn middle" data-dismiss="modal" id="btnContactUs">Send</button>
+            </center> -->
+            <button type="submit" class="btn-login" id="btnContactUs">Send</button>
+          </form>
+          <div id="success_message" style="width:100%; height:100%; display:none;overflow:none"> <p class="t-wesblue f-600 f-1">Sent your message successfully!</p> </div>
+          <div id="error_message" style="width:100%; height:100%; display:none;overflow:none"> <p class="t-wesblue f-600 f-1">Error</p> Sorry there was an error sending your form. </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+
+
+<footer>
+  <div class="footer-wrapper">
+
+    <a href="https://www.westat.com" target="_blank" title="Visit website"><img src="../images/white-logo.svg" alt="Westat Home page" title="Westat" class="img-wes-logo"></a> <p class="p-wes-title t-white">An Employee-Owned Research Corporation<sup class="t-white">®</sup></p></div>
+  </footer>
+  <script type="text/javascript" src="vendorlibs/jquery.min.js"></script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script> -->
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="../form.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script> -->
+
+
+
+  <script>
+
+
+  $("a").on("keyup", function (e) {
+
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 9) {
+      $(this).css('outline', 'dashed 3px #ff9c00')
+
+    }
+
+  })
+  $("a").on('focusout', function() {
+    $(this).css('outline', 'none')
+  })
+
+  $("button").on("keyup", function (e) {
+
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 9) {
+      $(this).css('outline', 'dashed 3px #ff9c00')
+
+    }
+
+  })
+  $("button").on('focusout', function() {
+    $(this).css('outline', 'none')
+  })
+
+
+
+  $("input").on("keyup", function (e) {
+
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code == 9) {
+      $(this).css('outline', 'dashed 3px #ff9c00')
+
+    }
+
+  })
+  $("input").on('focusout', function() {
+    $(this).css('outline', 'none')
+  })
+  // $('#button').on('click', function() {
+  //
+  //
+  //     if ($('#password').value == 'sh2020') {
+  //        window.location.href="video.html";
+  //     }
+  //
+  //     else {
+  //        window.location.href="index.html";
+  //     }
+  //
+  // })
+
+
+  // $(document).ready(function (){
+  //
+  //
+  //   var firebaseConfig= {
+  //     apiKey: "AIzaSyDU4Nd6-oDDcIwEvpSQImv34_SKw-eQ3x4",
+  //     authDomain: "eventsauth-20225.firebaseapp.com",
+  //     databaseURL: "https://eventsauth-20225.firebaseio.com",
+  //     projectId: "eventsauth-20225",
+  //     storageBucket: "eventsauth-20225.appspot.com",
+  //     messagingSenderId: "118778614855",
+  //     appId: "1:118778614855:web:c1f21a9514553654"
+  //   };
+  //
+  //   function init(e){
+  //
+  //     $(".btn-logout").hide(), e ? ($(".auth-wrapper").removeClass("visible"),
+  //
+  //     $(".loader").show(), setTimeout(function (){
+  //
+  //       $(".btn-logout").show(),
+  //
+  //       $(".auth").removeClass("auth").addClass("stream"),
+  //
+  //       $('.stream-video').css({height: $('.stream').width() * 0.5625}),
+  //
+  //       $(".stream-wrapper").addClass("visible"), $(".loader").hide()
+  //     }, 1e3),
+  //
+  //     $(".auth-control.access").val("")) : ($(".stream-wrapper").removeClass("visible"), $(".stream").removeClass("stream").addClass("auth"), $(".loader").show(), $('.stream-wrapper iframe').remove(),
+  //
+  //     setTimeout(function (){
+  //
+  //       $(".auth-wrapper").addClass("visible"), $(".loader").hide()}, 1e3))
+  //
+  //     }
+  //
+  //     firebase.initializeApp(firebaseConfig), firebase.auth().onAuthStateChanged(function (e){
+  //
+  //
+  //       $(".login-message").text(""), init(!!e)
+  //
+  //     }),
+  //
+  //     $(".btn-login").click(function (e){
+  //
+  //
+  //       // $('.stream-wrapper').css('visibility', 'visible');
+  //       //   $('.stream-wrapper').css('opacity', '1')
+  //       //     $('.stream-wrapper').css('visibility', 'visible')
+  //
+  //       if ($(".auth-control.access").val() || document.querySelector(".auth-control.access").innerHTML)  {
+  //         window.location.href="video.html";
+  //       }
+  //
+  //       var t = $(".auth-control.access").val() || document.querySelector(".auth-control.access").innerHTML || e.stopPropagation(); t ? firebase.auth().signInWithEmailAndPassword("thisisadummyemail@westat.com", t.toLowerCase()).catch(function (e) {
+  //
+  //
+  //
+  //         e.code, e.message, $(".login-message").text("Incorrect Password, please try again.")
+  //
+  //       }) : $(".login-message").text("* Password required")
+  //
+  //
+  //     }
+  //
+  //     ),
+  //
+  //     $(".btn-logout").click(function () {
+  //
+  //       firebase.auth().signOut().then(function (){
+  //
+  //       }).catch(function (e){
+  //
+  //       })
+  //
+  //     });
+  //
+  //     $(window).resize(function (){
+  //
+  //       $('.stream-video, .stream-video iframe').css({height: $('.stream').width() * 0.5625 })
+  //
+  //     });
+  //
+  //
+  //
+  //
+  //     $('input.auth-control.access').on('keyup', function(e){if(e.keyCode===13){
+  //       $('.btn-login').click();
+  //     }
+  //
+  //     else {
+  //       e.stopPropagation();
+  //     }
+  //
+  //   })})
+
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138691227-6"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138691227-6');
+  </script>
+</body>
+</html>

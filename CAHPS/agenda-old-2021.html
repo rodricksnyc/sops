@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+    />
+    <title>
+      Consumer Assessment of Healthcare Providers and Systems (CAHPS)
+    </title>
+    <link rel="stylesheet" href="vendorlibs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="vendorlibs/font-awesome-pro/css/all.css" />
+    <link rel="stylesheet" href="vendorlibs/normalize.min.css" />
+    <link rel="shortcut icon" href="img/" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="css/events.css" /> -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserSessionPersistence  } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAb6bhfNgPB-_6OxR87Va5a5comyciFjvM",
+        authDomain: "cahps2021.firebaseapp.com",
+        projectId: "cahps2021",
+        storageBucket: "cahps2021.appspot.com",
+        messagingSenderId: "1090067740879",
+        appId: "1:1090067740879:web:b1f86b5a3702e8874cdfba"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+
+      onAuthStateChanged(auth, (user) => {
+        if (user){
+          console.log("user logged in");//, user);
+        }else{
+          location.pathname = location.pathname.replace("agenda", "index");
+        }
+      });
+
+      // setPersistence(auth, browserSessionPersistence)
+      //   .then(() => {
+      //     return signInWithEmailAndPassword(auth, "cahps@westat.com", "testit1")
+      //       .then((userCredential) => {
+      //         console.log("gredentials", userCredential);
+      //       })
+      //       .catch((error) => {
+      //         console.log("error", error);
+      //       })
+      //   })
+
+      window.signin = ()=>{
+        setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+          return signInWithEmailAndPassword(auth, "cahps@westat.com", "testit")
+            .then((userCredential) => {
+              console.log("gredentials", userCredential);
+            })
+            .catch((error) => {
+              console.log("error", error);
+            })
+        })
+      }
+
+      // signInWithEmailAndPassword(auth, "cahps@westat.com", "testit2")
+      //   .then((userCredential) => {
+      //     console.log("gredentials", userCredential);
+      //   })
+      //   .catch((error) => {
+      //     console.log("error", error);
+      //   })
+
+
+      console.log(app, auth);
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid overflow-hidden position-relative">
+      <header class="landing d-flex justify-content-center">
+        <h1>Advancing the Science and Implementation of Patient Narratives</h1>
+      </header>
+      <section class="block0">
+        <div class="hero-img-container heros" id="Home">
+          <img
+            src="img/cahps_logo.svg"
+            class="img-responsive logo"
+            alt="Consumer Assessment of Healthcare Providers and Systems (CAHPS) logo"
+          />
+          <div class="hero-img">
+            <div class="landing-panel">
+              <h3>2021 CAHPS Research Meeting</h3>
+              <h4>
+                Thursday, October 7, 2021 <span class="purple">|</span> 11:00am
+                - 4:00pm ET via Webex
+              </h4>
+              <p>
+                Interest in using patient narratives to improve care experiences
+                has grown rapidly in recent years. Health care organizations and
+                online rating sites now routinely post patient comments along
+                with survey scores and other quality measures. Recognizing that
+                narratives can complement the information obtained through
+                standardized Consumer Assessment of Healthcare Providers and
+                Systems (CAHPS®) surveys, CAHPS researchers have been developing
+                and testing new approaches to collecting and using patient
+                narratives. This research has led to the development of several
+                CAHPS supplemental Narrative Item Sets. Early testing of these
+                questions has revealed important insights on the use of patient
+                narratives for identifying and addressing critical needs for
+                improving care experiences including emerging issues related to
+                equity, empathy, and patient safety.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="menu-buttons">
+        <ul class="menu-buttons-list">
+          <li tabindex="0" data-target="#Guide" class="objective"></li>
+          <li tabindex="0" data-target="#FAQ" class="agenda"></li>
+          <li tabindex="0" data-target="#Privacy" class="speakers"></li>
+          <li tabindex="0" data-target="#Contact" class="materials"></li>
+        </ul>
+      </div>
+
+      <section class="block10">
+        <div id="Guide" class="landing-sec container-fluid heros">
+          <div class="hero-img-guide"></div>
+
+          <div class="guide-overlay container">
+            <h2 class="landing-sec-H text-center purple">Objectives</h2>
+            <p>
+              This half-day virtual research meeting will convene a group of
+              approximately 100 researchers, health care organizations, quality
+              improvement experts, patient advocates, and policymakers to
+              explore four major questions:
+            </p>
+            <ul class="guide-list">
+              <li class="guide">
+                <div class="guide-wrapper">
+                  <img class="guide-list-I" src="img/1.svg" alt="" />
+                  <p class="guide-list-T">
+                    <span class="purple strong">1.</span>
+                    <span class="guide-list-H"
+                      >How can narratives be analyzed, reported and used for
+                      maximum impact in quality improvement initiatives?</span
+                    >
+                  </p>
+                </div>
+              </li>
+
+              <li class="guide">
+                <!-- <p class="guide-list-N-768">2</p> -->
+                <div class="guide-wrapper">
+                  <img class="guide-list-I" src="img/2.svg" alt="" />
+                  <!-- <p class="guide-list-N">2</p> -->
+                  <p class="guide-list-T">
+                    <span class="purple strong">2.</span>
+                    <span class="guide-list-H"
+                      >What are the challenges and opportunities for using
+                      patient narratives in public reports?</span
+                    >
+                  </p>
+                </div>
+              </li>
+
+              <li class="guide">
+                <!-- <p class="guide-list-N-768">3</p> -->
+                <div class="guide-wrapper">
+                  <img class="guide-list-I" src="img/3.svg" alt="" />
+                  <p class="guide-list-T">
+                    <span class="purple strong">3.</span>
+                    <span class="guide-list-H"
+                      >What do narratives reveal about patients’ experiences
+                      that complement CAHPS survey results? How can narrative
+                      questions be successfully implemented in real-world
+                      settings?</span
+                    >
+                  </p>
+                </div>
+              </li>
+              <li class="guide">
+                <!-- <p class="guide-list-N-768">4</p> -->
+                <div class="guide-wrapper">
+                  <img class="guide-list-I submit" src="img/4.svg" alt="" />
+                  <!-- <p class="guide-list-N">4</p> -->
+                  <p class="guide-list-T">
+                    <span class="purple strong">4.</span>
+                    <span class="guide-list-H"
+                      >What are the potential benefits and challenges of using
+                      Natural Language Processing (NLP) and other machine
+                      learning methods for analyzing narratives? What are the
+                      advantages of NLP methods over human qualitative coding
+                      approaches? How can the two approaches be combined for
+                      optimal effect?</span
+                    >
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="block5">
+        <div class="hero-img-agenda-bottom"></div>
+        <div id="FAQ" class="landing-sec heros">
+          <div class="guide-overlay container">
+            <h2 class="landing-sec-H text-center purple">
+              Agenda & Presentations
+            </h2>
+            <p>
+              The meeting will include a combination of plenary and concurrent
+              sessions presented by CAHPS researchers, field test partners,
+              quality improvement experts, and other users. Participants will be
+              asked to register for specific concurrent sessions of their
+              choice. The discussions for all sessions will be moderated through
+              online Q&A and chat functions.
+            </p>
+
+            <div class="landing-panel-two">
+              <h5>
+                <span class="purple">10:50am - 11:00am ET via Webex</span>
+                Please JOIN THE MEETING at
+                <span class="purple">10:50am</span> to facilitate a prompt start
+              </h5>
+            </div>
+
+            <div class="agendaBubble">
+              <div class="aquaBubble">
+                <h3 class="charcoal">Morning Plenary Session</h3>
+                <p class="purple">11:00am - 12:05pm</p>
+              </div>
+
+              <div class="whiteBubble" style="margin-top: 8em">
+                <a
+                  class="join"
+                  href="https://westat.webex.com/westat/onstage/g.php?MTID=e18645e24743afb92bc5537fcf6c9bd59"
+                  target="_blank"
+                  >Join Session</a
+                >
+
+                <div class="tan">
+                  <p class="strong mb-0">
+                    <span class="purple">11:00 – 11:15am</span> Welcome & Goals
+                    of the Meeting (plenary session)
+                  </p>
+                </div>
+                <ul>
+                  <li>
+                    Welcome and Online Meeting Logistics:
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="19"
+                      data-singleview="true"
+                      >Joann Sorra</span
+                    >, PhD, Associate Director, Westat
+                  </li>
+                  <li>
+                    Welcome from AHRQ: <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="6"
+                      data-singleview="true"
+                      >Caren Ginsberg</span>,
+                    PhD, CPXP, Director, CAHPS & SOPS, AHRQ
+                  </li>
+                  <li>
+                    Meeting Background and Objectives:
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="18"
+                      data-singleview="true"
+                      >Dale Shaller</span>, MPA, Principal, Shaller
+                    Consulting Group
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st AM Plenary-Shaller-Background and Objectives_PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                </ul>
+
+                <div class="tan mt-3">
+                  <p class="strong mb-0">
+                    <span class="purple">11:15 – 11:40am</span> The Power of
+                    Patient Stories (plenary session) 
+                  </p>
+                </div>
+                <ul>
+                  <li>
+                    Presentation: <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="7"
+                      data-singleview="true"
+                      >Rachel Grob</span>, PhD,
+                    Clinical Professor, Senior Scientist, and Director of
+                    National Intitiatives, Center for Patient Partnerships,
+                    University of Wisconsin-Madison
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st AM Plenary-Grob-Power of Patient Stories.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i>
+                    </a>
+                  </li>
+
+                  <li class="strong">Participant Q&A</li>
+                </ul>
+
+                <div class="tan mt-3">
+                  <p class="strong mb-0">
+                    <span class="purple">11:40 – 12:05pm</span> Using Narratives
+                    for Quality Improvement (plenary session)
+                  </p>
+                </div>
+                <ul>
+                  <li>
+                    Presentation: <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="11"
+                      data-singleview="true"
+                      >Ingrid Nembhard</span>, PhD,
+                    Fishman Family President's Distinguished Professor,
+                    Associate Professor of Health Care Management, The Wharton
+                    School, University of Pennsylvania <br /><a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st AM Plenary-Nembhard-Using Narratives Quality Improvement.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                  <li class="strong">Participant Q&A</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="agendaBubble mt-5">
+              <div class="tanBubble">
+                <div class="tan">
+                  <p class="strong mb-0">
+                    <span class="purple">12:05 – 12:55pm</span> Concurrent
+                    Sessions on Using Narratives for Quality Improvement (choose
+                    one of two)
+                  </p>
+                </div>
+              </div>
+
+              <div class="whiteBubble" style="margin-top: 8em">
+                <div class="position-relative">
+                  <div class="teal">
+                    <p class="strong mb-0">
+                      Concurrent Sesssion 1: Presenting Narrative Information to
+                      Drive Improvement
+                    </p>
+                  </div>
+
+                  <a
+                    class="join two"
+                    href="https://westat.webex.com/westat/j.php?MTID=md85280e948cfd0fb50c3ae509b12a49e"
+                    >Join Session</a
+                  >
+                </div>
+                <ul class="normal">
+                  <li>
+                    <span class="strong"
+                      >Innovative Strategies for Internal Feedback
+                      Reporting</span
+                    ><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="4"
+                      data-singleview="true"
+                      >Rick Evans</span>, Senior VP, Patient
+                    Services and Chief Experience Officer, New York-Presbyterian
+                    Hospital
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st Concurrent 1-Evans-Innov Strategies for Internal Feedback Reporting PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <span class="strong"
+                      >Use of Narratives in Experience-Based Co-Design</span
+                    ><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="5"
+                      data-singleview="true"
+                      >Bev Fitzsimons</span>, Chief
+                    Executive, The Point of Care Foundation
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st Concurrent 1-Fitzsimons-Use of Narratives in Experience-Based Co-Design PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <span class="strong">Participant Q&A </span><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="3"
+                      data-singleview="true"
+                      >Susan Edgman-Levitan</span
+                    >, PA, Executive Director, John D. Stoeckle Center for
+                    Primary Care Innovation, Massachusetts General Hospital
+                    (Moderator)
+                  </li>
+                </ul>
+
+                <div class="position-relative">
+                  <div class="teal">
+                    <p class="strong mb-0">
+                      Concurrent Session 2: Extracting Insights from Narratives
+                      for Improvement 
+                    </p>
+                  </div>
+
+                  <a
+                    class="join two"
+                    href="https://westat.webex.com/westat/j.php?MTID=m225fa6d428ad7dd1515a637749da5189"
+                    target="_blank"
+                    >Join Session</a
+                  >
+                </div>
+                <ul class="normal">
+                  <li>
+                    <span class="strong"
+                      >The Value of Patients’ Creative Ideas for Quality
+                      Improvement</span
+                    ><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="9"
+                      data-singleview="true"
+                      >Yuna Lee</span>, Assistant Professor,
+                    Columbia Mailman School of Public Health
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st Concurrent 2-Lee-Value Patients Creative Ideas for Quality Improvement PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <span class="strong"
+                      >Learning About Trust Through Narratives From People With
+                      Cystic Fibrosis</span
+                    ><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="21"
+                      data-singleview="true"
+                      >Stacy Van Gorp</span>, Partner, See
+                    What I Mean, LLC
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st Concurrent 2-Van Gorp-Learning about Trust Through Narratives PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <span class="strong">Participant Q&A </span><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="11"
+                      data-singleview="true"
+                      >Ingrid Nembhard</span
+                    >, Moderator
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st Concurrent 2-Nembhard- Intro Extracting Insights Narratives for Improvement PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="landing-panel-three">
+              <h2 class="charcoal neg">
+                <span class="purple">12:55 – 1:25pm</span> BREAK
+                <i class="fas fa-coffee-togo"></i>
+              </h2>
+            </div>
+
+            <div class="agendaBubble">
+              <div class="aquaBubble">
+                <h3 class="charcoal">First Afternoon Plenary</h3>
+                <p class="purple">1:25pm – 2:30pm</p>
+              </div>
+
+              <div class="whiteBubble" style="margin-top: 8em">
+                <a
+                  class="join"
+                  target="_blank"
+                  href="https://westat.webex.com/westat/onstage/g.php?MTID=e18645e24743afb92bc5537fcf6c9bd59"
+                  >Join Session</a
+                >
+
+                <div class="tan">
+                  <p class="strong mb-0">
+                    <span class="purple">1:25 – 2:15pm</span> Using Patient
+                    Narratives in Public Reports (plenary session) 
+                  </p>
+                </div>
+                <ul>
+                  <li class="strong">
+                    Panel Discussion: Posting Comments on Health System
+                    Websites: Challenges and Opportunities
+                  </li>
+                  <li>
+                    <span class="strong">Panel Introduction</span><br />
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="18"
+                      data-singleview="true"
+                      >Dale Shaller</span>, Moderator
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st PM Plenary-Shaller-Posting Comments Panel Introduction PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <span class="strong">Panel Discussion</span><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="2"
+                      data-singleview="true"
+                      >Christian Dankers</span>, MD, Associate Chief Quality Officer, Mass General
+                    Brigham<br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st PM Plenary-Dankers-Posting Comments on Health System Websites PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i></a
+                    ><br /><br />
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="0"
+                      data-singleview="true"
+                      >Adrienne Boissy</span>, MD, Chief Experience
+                    Officer, Cleveland Clinic
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st PM Plenary-Boissy-Posting Comments on Health System Websites.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <span class="strong">Participant Q&A</span><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="18"
+                      data-singleview="true"
+                      >Dale Shaller</span>, Moderator
+                  </li>
+                </ul>
+
+                <div class="tan mt-3">
+                  <p class="strong mb-0">
+                    <span class="purple">2:15 – 2:30pm</span> Introduction to
+                    the CAHPS Narrative Item Sets (plenary session)
+                  </p>
+                </div>
+                <ul>
+                  <li>
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="17"
+                      data-singleview="true"
+                      >Mark Schlesinger</span>, PhD, Professor,
+                    Yale School of Public Health
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/1st PM Plenary-Schlesinger-Introduction to CAHPS Narrative Item Sets PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="agendaBubble mt-5">
+              <div class="tanBubble">
+                <div class="tan">
+                  <p class="strong mb-0">
+                    <span class="purple">2:30 – 3:05pm</span> Concurrent
+                    Sessions on CAHPS Narrative Item Sets (choose one of three)
+                  </p>
+                </div>
+              </div>
+
+              <div class="whiteBubble" style="margin-top: 8em">
+                <div class="position-relative">
+                  <div class="teal">
+                    <p class="strong mb-0">
+                      Concurrent Session 1: CAHPS Clinician & Group (CG-CAHPS)
+                      Survey Narrative Item Set 
+                    </p>
+                  </div>
+
+                  <a
+                    class="join two"
+                    href="https://westat.webex.com/westat/j.php?MTID=md85280e948cfd0fb50c3ae509b12a49e"
+                    target="_blank"
+                    >Join Session</a
+                  >
+                </div>
+                <ul>
+                  <li>
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="17"
+                      data-singleview="true"
+                      >Mark Schlesinger</span>, PhD, Professor,
+                    Yale School of Public Health
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/2nd Concurrent 1-Schlesinger-CG CAHPS Survey Narrative Item Set PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i>
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="position-relative">
+                  <div class="teal">
+                    <p class="strong mb-0">
+                      Concurrent Session 2: CAHPS Health Plan Survey Narrative
+                      Item Set  
+                    </p>
+                  </div>
+
+                  <a
+                    class="join two"
+                    href="https://westat.webex.com/westat/j.php?MTID=m225fa6d428ad7dd1515a637749da5189"
+                    target="_blank"
+                    >Join Session</a
+                  >
+                </div>
+                <ul>
+                  <li>
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="16"
+                      data-singleview="true"
+                      >Lise Rybowski</span>, MBA, President, The
+                    Severyn Group<br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="8"
+                      data-singleview="true"
+                      >Blake Hodges</span>,
+                    Senior Consultant, National Market Research, Kaiser
+                    Permanente
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/2nd Concurrent 2-Rybowski-Hodges-Health Plan Narrative Item Set PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i>
+                    </a>
+                  </li>
+                  <li class="strong">Participant Q&amp;A</li>
+                </ul>
+
+                <div class="position-relative">
+                  <div class="teal">
+                    <p class="strong mb-0">
+                      Concurrent Session 3: CAHPS Child Hospital Survey (HCAHPS)
+                      Narrative Item Set   
+                    </p>
+                  </div>
+
+                  <a
+                    class="join two"
+                    target="_blank"
+                    href="https://westat.webex.com/westat/j.php?MTID=m655ecef080d5a1a9ad94525aa12e7f4c"
+                    >Join Session</a
+                  >
+                </div>
+                <ul>
+                  <li>
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="15"
+                      data-singleview="true"
+                      >Kerry Reynolds</span>, PhD, Senior
+                    Behavioral/Social Scientist, RAND <br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="1"
+                      data-singleview="true"
+                      >Kelli Carroll</span
+                    >, PFAC Leader, UCLA Mattel Children’s hospital
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/2nd Concurrent 3-Reynolds-Carroll-CAHPS Child Hospital Survey NIS PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i>
+                    </a>
+                  </li>
+                  <li class="strong">Participant Q&amp;A</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="agendaBubble mt-5">
+              <div class="aquaBubble">
+                <h3 class="charcoal">Second Afternoon Plenary</h3>
+                <p class="purple">3:05 – 4:00pm</p>
+              </div>
+
+              <div class="whiteBubble" style="margin-top: 8em">
+                <a
+                  class="join"
+                  href="https://westat.webex.com/westat/onstage/g.php?MTID=e18645e24743afb92bc5537fcf6c9bd59"
+                  target="_blank"
+                  >Join Session</a
+                >
+
+                <div class="tan">
+                  <p class="strong mb-0">
+                    <span class="purple">3:05 – 3:55pm</span> Narrative Analysis
+                    Methods
+                  </p>
+                </div>
+                <ul>
+                  <li>
+                    <span class="strong"
+                      >Using Natural Language Processing (NLP) to Code Patient
+                      Narratives: Capabilities and Challenges (plenary
+                      session)</span
+                    ><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="10"
+                      data-singleview="true"
+                      >Steven Martino</span>, PhD, Senior
+                    Behavioral/Social Scientist, RAND<br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="12"
+                      data-singleview="true"
+                      >Osonde Osoba</span
+                    >, Senior Information Scientist, RAND
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/2nd PM Plenary-Martino-Osoba-Using NLP to Code Patient Narratives PDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <span class="strong"
+                      >Using Public Source NLP Software to Code CG-CAHPS
+                      Comments in Massachusetts (plenary session)</span
+                    ><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="20"
+                      data-singleview="true"
+                      >Amy Stern</span>, Director of
+                    Operations and Commercial Surveys, Massachusetts Health
+                    Quality Partners<br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="14"
+                      data-singleview="true"
+                      >Raji Rajan</span>,
+                    Senior Programming Manager, Massachusetts Health Quality
+                    Partners
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/2nd PM Plenary-Stern-Rajan-NLP Software to Code CG-CAHPS Comments in MassachusettsPDF.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <span class="strong">Participant Q&amp;A</span><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="13"
+                      data-singleview="true"
+                      >Andy Parker</span
+                    >, Moderator
+                  </li>
+                </ul>
+
+                <div class="tan mt-3">
+                  <p class="strong mb-0">
+                    <span class="purple">3:55 – 4:00pm</span> Closing
+                  </p>
+                </div>
+                <ul>
+                  <li>
+                    <span class="strong"
+                      >Meeting Wrap-up and Closing Remarks</span
+                    ><br /><span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="6"
+                      data-singleview="true"
+                      >Caren Ginsberg</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block20" id="Privacy">
+        <div class="heros">
+          <div class="container guide-overlay">
+            <h2 class="landing-sec-H text-center purple mb-0">Speakers</h2>
+            <p class="text-center mt-0">
+              Select a speaker to view more about them.
+            </p>
+
+            <div class="row">
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="0"
+                >
+                  <img src="img/boissy.jpg" class="img-responsive" /><br />
+                  Adrienne Boissy
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="1"
+                >
+                  <img src="img/kelli.jpg" class="img-responsive" /><br />
+                  Kelli Carroll
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="2"
+                >
+                  <img src="img/dankers.jpg" class="img-responsive" /><br />
+                  Christian Dankers
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="3"
+                >
+                  <img src="img/edgman.jpg" class="img-responsive" /><br />
+                  Susan Edgman-Levitan
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="4"
+                >
+                  <img src="img/evans.jpg" class="img-responsive" /><br />
+                  Rick Evans
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="5"
+                >
+                  <img src="img/fitzsimons.jpg" class="img-responsive" /><br />
+                  Bev Fitzsimons
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="6"
+                >
+                  <img src="img/ginsberg.jpg" class="img-responsive" /><br />
+                  Caren Ginsberg
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="7"
+                >
+                  <img src="img/grob.jpg" class="img-responsive" /><br />
+                  Rachel Grob
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="8"
+                >
+                  <img src="img/hodges.jpg" class="img-responsive" /><br />
+                  Blake Hodges
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="9"
+                >
+                  <img src="img/lee.jpg" class="img-responsive" /><br />
+                  Yuna Lee
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="10"
+                >
+                  <img src="img/martino.jpg" class="img-responsive" /><br />
+                  Steven Martino
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="11"
+                >
+                  <img src="img/ingrid.jpg" class="img-responsive" /><br />
+                  Ingrid Nembhard
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="12"
+                >
+                  <img src="img/osoba.png" class="img-responsive" /><br />
+                  Osonde Osoba
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="13"
+                >
+                  <img src="img/parker.jpg" class="img-responsive" /><br />
+                  Andy Parker
+                </button>
+              </div>
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="14"
+                >
+                  <img src="img/raji.jpg" class="img-responsive" /><br />
+                  Raji Rajan
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="15"
+                >
+                  <img src="img/reynolds.jpg" class="img-responsive" /><br />
+                  Kerry Reynolds
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="16"
+                >
+                  <img src="img/lise.jpg" class="img-responsive" /><br />
+                  Lise Rybowski
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="17"
+                >
+                  <img src="img/sch.jpg" class="img-responsive" /><br />
+                  Mark Schlesinger
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="18"
+                >
+                  <img src="img/shaller.jpg" class="img-responsive" /><br />
+                  Dale Shaller
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="19"
+                >
+                  <img src="img/joann.jpg" class="img-responsive" /><br />
+                  Joann Sorra
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3
+                  offset-lg-3
+                  col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="20"
+                >
+                  <img src="img/stern.png" class="img-responsive" /><br />
+                  Amy Stern
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="21"
+                >
+                  <img src="img/vangorp.jpg" class="img-responsive" /><br />
+                  Stacy Van Gorp
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="hero-img-guide"></div> -->
+      </section>
+
+      <!-- Modal -->
+      <div
+        class="modal"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+        data-bs-backdrop="static"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="wrapper">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <img class="img-responsive" src="img/close_X.svg" />
+                </button>
+                <div class="carousel">
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/boissy.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Adrienne Boissy, MD, MA</p>
+                        <p class="small">
+                          Chief Experience Officer of the Cleveland Clinic
+                          Health System and a staff neurologist at the Cleveland
+                          Clinic Mellen Center for Multiple Sclerosis
+                        </p>
+                        <p class="small">
+                          <span class="strong">Dr. Boissy</span> leads
+                          initiatives to address and improve every aspect of a
+                          patient’s encounter with the Cleveland Clinic Health
+                          System – from their physical comfort to their
+                          educational, emotional and spiritual needs. Based on
+                          what matters most to patients, she sets the enterprise
+                          strategic vision for how to enable human centered care
+                          through design thinking, digital engagement, and
+                          compassionate innovation. Dr. Boissy co-chairs the
+                          Empathy and Innovation summit, the largest independent
+                          summit on patient experience in the world. She serves
+                          as Editor Emeritus of the Journal of Patient
+                          Experience, the Editorial Board of NEJM Catalyst, and
+                          serves on the Advisory Board for Option B. She has
+                          published extensively about transformational change
+                          needed in patient centered measurement, relational
+                          communication, burnout, and empathy, and advocates for
+                          major operational changes in healthcare systems for a
+                          more humane experience, noted in her provocative TED
+                          talk “Can empathy help heal healthcare?” Her work has
+                          been featured in The Wall Street Journal, NPR, The
+                          Washington Post, Forbes, and The Atlantic, among
+                          others. A Harvard Macy scholar, she has been
+                          repeatedly recognized as a leading physician executive
+                          and thought leader.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/kelli.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Kelli Carroll, MS, CCLS</p>
+                        <p class="small">
+                          Master of Science in Development and Family Studies
+                          from the University of North Texas and has been a
+                          Child Life Specialist for over twenty years
+                        </p>
+                        <p class="small">
+                          As a clinician, Kelli worked with the surgery
+                          population at Children’s Medical Center Dallas working
+                          to prepare and support patients and their families for
+                          surgical procedures. She also spent 8 years as the
+                          Education Coordinator for the Department, managing
+                          Practicum, Intern and Fellowship programs; along with
+                          serving as a Department Supervisor for clinical
+                          specialists. Currently, Kelli is the Director of the
+                          Chase Child Life & Expressive Arts Therapies Program
+                          at UCLA Mattel Children’s Hospital where she
+                          supervises a team of 26 child life and creative arts
+                          professionals along with providing leadership for the
+                          hospital’s General and Spanish Parent Advisory
+                          Councils. Kelli has served as an adjunct professor
+                          teaching Child Life courses at the University of North
+                          Texas, The University of Texas at Dallas and most
+                          recently Azusa Pacific University. Forging supportive
+                          relationships with fellow ancillary care colleagues
+                          and community partners in order to enhance patient and
+                          family care is one of her strengths. This former
+                          competitive figure skater is known for bringing a
+                          playful spirit to the leadership table and is always
+                          seeking creative ways to make the workplace more fun.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/dankers.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Christian Dankers, MD, MBA</p>
+                        <p class="small">
+                          Associate Chief Quality Officer, Mass General Brigham;
+                          Harvard Medical School Faculty
+                        </p>
+                        <p class="small">
+                          <span class="strong">Dr. Dankers</span> grew up in
+                          Monroe, WA and attended Williams College where he
+                          studied Philosophy. After college, he worked for three
+                          years at the Advisory Board Company in Washington
+                          D.C., which provides business strategy research and
+                          consulting services for hospitals. He then attended
+                          the University of Pennsylvania, where he obtained his
+                          M.D. and M.B.A. He completed internal medicine
+                          residency at The Massachusetts General Hospital and
+                          remained at the MGH for three years following
+                          residency, splitting his time between clinical work as
+                          a hospitalist and quality and safety work as a member
+                          of the Edward P. Lawrence Center for Quality and
+                          Safety. In 2013, Dr. Dankers joined the Department of
+                          Quality and Safety at Brigham and Women’s Hospital. As
+                          Associate Chief Quality Officer, he worked on Hospital
+                          Acquired Condition reduction, mortality reduction,
+                          improving the patient experience, and on strengthening
+                          safety culture through the application of Just Culture
+                          and reliability management principles. In 2018, Dr.
+                          Dankers joined Mass General Brigham as the Associate
+                          Chief Quality Officer, where he is responsible for
+                          system level work in patient experience, health
+                          equity, and safety, as well as overseeing quality
+                          contracting and the government payment and policy team
+                          in the Quality and Patient Experience group. He
+                          continues to practice as a hospitalist at Brigham
+                          Health.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/edgman.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Susan Edgman-Levitan, PA-C</p>
+                        <p class="small">
+                          Executive Director/Co-Principal Investigator, John D.
+                          Stoeckle Center for Primary Care Innovation,
+                          Massachusetts General Hospital/Yale
+                        </p>
+                        <p class="small">
+                          <span class="strong"
+                            >Susan Edgman-Levitan, PA-C,</span
+                          >
+                          is Executive Director of the John D. Stoeckle Center
+                          for Primary Care Innovation at Massachusetts General
+                          Hospital, a lecturer in the Department of Medicine,
+                          Massachusetts General Hospital (MGH), and an Associate
+                          in Health Policy, Harvard Medical School. She is the
+                          co-chair of the Patient Experience Leaders Committee
+                          at MassGeneral Brigham Health System and leads the
+                          patient/clinician engagement work for the MGH
+                          Palliative Care Continuum Project. Prior to MGH, Susan
+                          was the founding President of the Picker Institute. A
+                          constant advocate of understanding the patient’s
+                          perspective on healthcare, she has been the
+                          co-principal investigator on the Harvard Consumer
+                          Assessment of Healthcare Providers and Systems (CAHPS)
+                          study, and is a member of the Lucian Leape Institute
+                          at the Institute for Healthcare Improvement (IHI) and
+                          Senior Fellow at IHI. She is an editor of Through the
+                          Patient’s Eyes, a book on creating and sustaining
+                          patient-centered care, The CAHPS Improvement Guide,
+                          and co-authored the Institute of Medicine 2006 report,
+                          The Future of Drug Safety: Promoting and Protecting
+                          the Health of the Public. Ms. Edgman-Levitan serves on
+                          several boards and national advisory committees,
+                          including the ABIM Council and the ABIM Foundation,
+                          and the Primary Care Collaborative. In 2007, she
+                          received the Leadership and Innovation Award from the
+                          Center for Information Therapy and the 2016 Inaugural
+                          Richard Nesson Award from the Massachusetts Health
+                          Quality Partnership. Susan holds degrees from the
+                          University of Michigan and the Duke University
+                          Physician Assistant program, where she received the
+                          Distinguished Alumni Award and inducted into the Duke
+                          University Medical Center Hall of Fame, in 2004.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/evans.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Rick Evans, MA</p>
+                        <p class="small">
+                          Senior Vice President and Chief Experience Officer for
+                          NewYork-Presbyterian
+                        </p>
+                        <p class="small">
+                          In this role, he oversees NYP’s ongoing strategy to
+                          improve and enhance the patient and family experience
+                          across NYP’s continuum of care and its eleven
+                          facilities in and around New York City. Rick also
+                          leads enterprise-wide efforts to improve access and
+                          the customer experience across NYP’s extensive network
+                          of primary care and specialty practice sites. He is
+                          also responsible for an array of hospital teams; some
+                          of these include Patient Services, Pastoral Care,
+                          Volunteers, Medical Interpreting, and Physician
+                          Referral. Over his 20 years in healthcare, Rick has
+                          had responsibility for patient experience and has a
+                          proven track record of accomplishment. Over his
+                          career, he has also had responsibility for a wide
+                          range of hospital operations including, but not
+                          limited to, overseeing nursing units, community health
+                          centers and programs, fund development functions. Rick
+                          is a recognized national leader in the patient
+                          experience field, serving as the Co-Chair of the
+                          National Patient Experience Policy Form with the Beryl
+                          Institute and serving as the Public Member on the
+                          American Nurses Credentialing Center’s Magnet
+                          Recognition Commission. Masters Degree in Theology
+                          from Christ the King Seminary in East Aurora, NY
+                          Bachelor’s Degree in Philosophy from Wadhams Hall
+                          Seminary College in Ogdensburg, NY.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img
+                        src="img/fitzsimons.jpg"
+                        class="img-responsive first"
+                      />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Bev Fitzsimons, MSc</p>
+                        <p class="small">
+                          Chief Executive – The Point of Care Foundation
+                        </p>
+                        <p class="small">
+                          <span class="strong">Bev Fitzsimons</span> is the
+                          Chief Executive of the Foundation, based in London,
+                          UK. She is also responsible for development, design
+                          and oversight of patient-centred quality improvement
+                          initiatives. From 2009-2014, Bev was a Fellow in
+                          Health Policy at the King’s Fund, leading
+                          patient-centred quality improvement programmes within
+                          the Point of Care team. A social scientist by
+                          background, Bev spent 12 years working in healthcare
+                          audit and regulation at the Healthcare Commission,
+                          Commission for Healthcare Improvement, and the Audit
+                          Commission, with particular interest in the care of
+                          people with long term conditions and maternity care.
+                          Bev is a member of the founding cohort of the Health
+                          Foundation’s Q initiative, which is a community of
+                          practice for quality improvement. As well as her
+                          professional interest in quality improvement, she has
+                          also been a service user representative in her local
+                          community and was a lay board member of the
+                          Confidential Enquiry into Maternal and Child Health.
+                          Bev lives in London with partner and two kids still at
+                          home, and one studying away.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img
+                        src="img/ginsberg.jpg"
+                        class="img-responsive first"
+                      />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Caren Ginsberg, PhD, CPXP</p>
+
+                        <p class="small">
+                          <span class="strong">Caren Ginsberg</span> directs the
+                          Agency for Healthcare Research and Quality’s (AHRQ)
+                          work on the Consumer Assessment of Healthcare
+                          Providers and Systems (CAHPS®) and Surveys on Patient
+                          Safety Culture™ (SOPS®). An anthropologist and
+                          demographer, Dr. Ginsberg has broad-based experience
+                          in patient experience, patient safety, and public
+                          health. In her position at AHRQ, she focuses on
+                          program development, implementation, operations and
+                          evaluation, with specialty in survey design and
+                          development, and qualitative evaluation and
+                          assessment. Previously, she held positions at the
+                          Centers for Medicare and Medicaid Services (CMS),
+                          Westat, and the National Quality Forum.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/grob.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Rachel Grob, PhD</p>
+
+                        <p class="small">
+                          <span class="strong">Dr. Grob</span> devotes her time
+                          to learning about peoples’ experiences with health and
+                          health care. She elicits stories from diverse people,
+                          and then synthesizes and amplifies them to make health
+                          care work better. She also uses narratives as a
+                          teaching tool for future clinicians, to inform policy,
+                          and to catalyze concrete changes that benefit
+                          consumers, families and communities. She is a public
+                          spokesperson for the value of qualitative work, and
+                          for the importance of systematically including the
+                          most diverse perspectives possible in research, public
+                          discourse, and at tables where decisions get made. Dr.
+                          Grob has several roles at the University of
+                          Wisconsin-Madison: Director of National Initiatives at
+                          the Center for Patient Partnerships; Senior Scientist
+                          at the Department of Family Medicine and Community
+                          Health; and Investigator at the Health Improvement
+                          Program. She also chairs the national Health
+                          Experiences Research Network
+                          (www.healthexperiencesusa.org). Dr. Grob is the author
+                          of numerous articles and books, and frequently speaks
+                          about her work in national and international venues.
+                          She has a master’s degree in health advocacy, a
+                          doctorate in sociology, an active yoga practice, and a
+                          really cool family. She divides her time between
+                          Wisconsin and New York.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/hodges.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Blake Hodges, MS</p>
+                        <!-- <p class="small">Chief Executive – The Point of Care Foundation</p> -->
+                        <p class="small">
+                          <span class="strong">Blake Hodges</span> is a senior
+                          consultant with national market research at Kaiser
+                          Permanente Health Plan. Starting out in the
+                          Mid-Atlantic region, Blake manages several of the
+                          CAHPS surveys across Kaiser Permanente. Working with
+                          business partners at every level, Blake is passionate
+                          about using CAHPS to improve the member experience. In
+                          addition to CAHPS, Blake has worked on projects
+                          ranging from mental health to branding, and more
+                          recently vaccine hesitancy.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/lee.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Yuna S.H. Lee, PhD, MPH</p>
+                        <p class="small">
+                          Assistant Professor of Health Policy and Management at
+                          Columbia University
+                        </p>
+                        <p class="small">
+                          <span class="strong">Yuna Lee</span> is a health care
+                          management researcher and educator, who has spent two
+                          decades examining how health care organizations can
+                          thrive by fostering better experiences for patients
+                          and more meaningful work for clinicians and staff, and
+                          ultimately, improved quality. Her core research
+                          interests are 1) creativity in health care delivery,
+                          2) patient experience and provider well-being, and 3)
+                          quality improvement in teams and organizations. She
+                          uses qualitative and quantitative research methods to
+                          examine health care delivery from provider and patient
+                          perspectives, and to evaluate organizational
+                          performance. She brings her training in organizational
+                          behavior, public health, and health services research
+                          to all of her projects and partners with health care
+                          systems and communities in her research. Dr. Lee has
+                          received national recognition for her work, including
+                          awards from the Academy of Management, AcademyHealth,
+                          Industry Studies Association, and Emerald Publishing.
+                          She is a member of the Consumer Assessment of
+                          Healthcare Providers and Systems (CAHPS) research team
+                          and a fellow of the New York Academy of Medicine. At
+                          the Columbia Mailman School, Dr. Lee teaches
+                          Managerial and Organizational Behavior to graduate
+                          students and executives in the Masters of Health
+                          Administration program. Dr. Lee holds a MPH in
+                          Healthcare Management and a PhD in Health Policy and
+                          Management, with a concentration in Organizational
+                          Theory and Management, both from Yale University.
+                          Prior to academia, she managed special projects for
+                          the Executive Deputy Commissioner at the New York City
+                          Department of Health and Mental Hygiene, and has
+                          experience working in public health departments,
+                          academic medical centers, consultancies and research
+                          thinks tanks, in New York City and internationally.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/martino.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Steven Martino, PhD</p>
+                        <p class="small">
+                          Senior Behavioral Scientist at the RAND Corporation
+                        </p>
+                        <p class="small">
+                          For more than 15 years, Steven Martino has been
+                          involved in the design and evaluation of survey-based
+                          measures of patient experience and research to
+                          strengthen the science of public reporting of
+                          healthcare quality data to inform consumer choice and
+                          quality improvement initiatives. Steven has been a
+                          member of the CAHPS Consortium since 2006 and has led
+                          RAND’s Reports sub-team since 2012. For the past 10
+                          years, he has been part of a multidisciplinary team
+                          that has pioneered the development of (a) criteria for
+                          assessing the fidelity of elicited narratives, (b)
+                          protocols for eliciting patient narratives as part of
+                          large-scale patient experience surveys, (c) approaches
+                          for extracting information from patient narratives
+                          essential for quality improvement, and (d) approaches
+                          to presenting this information to healthcare consumers
+                          to increase patient engagement and inform their
+                          healthcare decision-making as well as to healthcare
+                          providers to help inform quality improvement efforts.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/ingrid.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Ingrid M. Nembhard, PhD, MS</p>
+                        <p class="small">
+                          Fishman Family President’s Distinguished Associate
+                          Professor of Health Care Management at The Wharton
+                          School, University of Pennsylvania
+                        </p>
+                        <p class="small">
+                          <span class="strong">Ingrid M. Nembhard's</span>
+                          research focuses on how characteristics of healthcare
+                          organizations, leaders, and staff affect their ability
+                          to engage in organizational learning, implement new
+                          practices, and improve healthcare.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/osonde.png" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Osonde Osoba, PhD</p>
+                        <!-- <p class="small">Fishman Family President’s Distinguished Associate Professor of Health Care Management at The Wharton School, University of Pennsylvania</p> -->
+                        <p class="small">
+                          <span class="strong">Osonde Osoba</span> (pronounced
+                          “oh-shOwn-day aw-shAw-bah”) is a senior information
+                          scientist at the RAND Corporation and a professor at
+                          the Pardee RAND Graduate School. His work primarily
+                          applies machine learning (ML) and advanced statistics
+                          to policy research problems in diverse topics such as
+                          epidemiology, defense acquisition, and science &
+                          technology policy. He also explores the value-laden
+                          implications of the use of artificial intelligence
+                          systems e.g. the fairness of ML and automated decision
+                          models.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/parker.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Andrew M. Parker, PhD</p>
+                        <!-- <p class="small">Fishman Family President’s Distinguished Associate Professor of Health Care Management at The Wharton School, University of Pennsylvania</p> -->
+                        <p class="small">
+                          <span class="strong">Andrew M. Parker</span> is a
+                          senior behavioral scientist at the RAND Corporation
+                          and has been a member of the CAHPS consortium reports
+                          team for the past nine years. His research involves
+                          how individuals, including patients, make decisions in
+                          complex real-world situations. He has co-led efforts
+                          to understand the potential for using natural language
+                          processing to analyze narratives of patient experience
+                          with health care.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/raji.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Raji Rajan, MBA</p>
+                        <!-- <p class="small">Fishman Family President’s Distinguished Associate Professor of Health Care Management at The Wharton School, University of Pennsylvania</p> -->
+                        <p class="small">
+                          <span class="strong">Raji Rajan</span> as Senior
+                          Programming Manager at MHQP has over 20 years of
+                          experience in the finance and banking industry,
+                          developing reporting and application integrations for
+                          various business’s needs. Raji worked as a Business
+                          Intelligence Developer and managed data warehouses.
+                          Raji has been working on reporting and analytics needs
+                          of Patient Experience Survey, worked on extensive
+                          analytics of Total Cost of Care using MA Claims data.
+                          Recently incorporated Natural Language Processing
+                          (NLP) to Patient Narratives collected by MHQP. Raji
+                          received a Master’s in Business Administration from
+                          Clark University, a Master’s in Applied Statistics
+                          from Worcester Polytechnic Institute, and a bachelor’s
+                          in economics from Stella Maris College, India.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img
+                        src="img/reynolds.jpg"
+                        class="img-responsive first"
+                      />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Kerry Reynolds, PhD</p>
+                        <p class="small">
+                          Senior Behavioral/Social Scientist at RAND with a
+                          Ph.D. in Social/Health Psychology from Carnegie Mellon
+                          University
+                        </p>
+                        <p class="small">
+                          <span class="strong">Dr. Reynolds</span> has broad
+                          experience with health and health care research, with
+                          work focused on patient experience, healthcare
+                          systems, mental health, chronic illness, and
+                          healthcare transitions. Dr. Reynolds has conducted
+                          both qualitative and quantitative studies in medical
+                          and community settings and has played a key role in
+                          evaluations of large programs related to health and
+                          mental health. She has extensive project leadership
+                          experience, experience in conducting qualitative
+                          interviews, focus groups and site visits, with
+                          stakeholders ranging from community members, parents
+                          and children to physicians, pharmacists, and
+                          healthcare administrators. Dr. Reynolds is an
+                          experienced leader of large projects funded by CMS,
+                          including leading multiple iterations of the
+                          implementation contract for the CMS CAHPS for ACOs and
+                          CAHPS for MIPS Surveys.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/lise.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Lise Rybowski, MBA</p>
+                        <!-- <p class="small">Senior Behavioral/Social Scientist at RAND with a Ph.D. in Social/Health Psychology from Carnegie Mellon University</p> -->
+                        <p class="small">
+                          <span class="strong">Ms. Rybowski</span> is president
+                          and co-founder of The Severyn Group, a health care
+                          communications, research, and consulting firm serving
+                          a diverse clientele of nonprofit, private, and
+                          governmental organizations. She has nearly 30 years of
+                          experience in studying and sharing best practices in
+                          health care quality measurement, reporting, and
+                          improvement. In her work for the Agency for Healthcare
+                          Research and Quality’s CAHPS program over the past 20
+                          years, Ms. Rybowski has participated in research on a
+                          variety of reporting and quality improvement issues.
+                          Recent projects include the development of narrative
+                          items for CAHPS surveys; the use of patient comments
+                          in public reports; the development, testing, and use
+                          of composite and summary scores of health care
+                          quality; and an evaluation of the use of CAHPS survey
+                          results to improve patient experience. Drawing on her
+                          expertise in public reporting, she has provided expert
+                          reviews of public performance reports, advised
+                          organizations on reporting CAHPS and other measures,
+                          led usability testing of public reports, and
+                          contributed to the development and design of several
+                          quality reports. Ms. Rybowski has also served as the
+                          editor of the CAHPS Ambulatory Improvement Guide and
+                          AHRQ’s TalkingQuality website. She received her BA
+                          from Princeton University and her MBA from Columbia
+                          University.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/sch.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Mark Schlesinger, PhD</p>
+                        <!-- <p class="small">Senior Behavioral/Social Scientist at RAND with a Ph.D. in Social/Health Psychology from Carnegie Mellon University</p> -->
+                        <p class="small">
+                          <span class="strong">Mark Schlesinger</span> is a
+                          wayward economist often mistaken for a political
+                          scientist or social psychologist. For the past two
+                          decades, he has studied patient experience and
+                          patients’ responses to problematic medical encounters;
+                          including ways of enhancing the scope, clarity, and
+                          influence of patient voice. Dr. Schlesinger’s other
+                          research interests include the determinants of public
+                          opinion about health and social policy, the influence
+                          of bounded rationality on medical consumers and
+                          consumerism, the impact of economic insecurity on
+                          political attitudes and public well-being, and the
+                          role of nonprofit organizations in American health
+                          care. Dr. Schlesinger is Professor of Health Policy
+                          and a fellow of the Institution for Social and Policy
+                          Studies at Yale University, immediate past-Chair of
+                          the Department of Health Policy and Management and a
+                          former editor of the Journal of Health Policy,
+                          Politics and Law. He has consulted to ten federal
+                          agencies, several dozen state governments, and a score
+                          of nonprofit organizations. His favored sports include
+                          uncompetitive volleyball and unlighted table tennis.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/shaller.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Dale Shaller, MPA</p>
+                        <p class="small">Principal, Shaller Consulting Group</p>
+                        <p class="small">
+                          <span class="strong">Dale Shaller</span> is Principal
+                          of Shaller Consulting Group, a health policy analysis
+                          and management consulting practice based in
+                          Stillwater, Minnesota. He has devoted nearly four
+                          decades to the design, implementation, and evaluation
+                          of health care quality measurement and improvement
+                          programs, with a special focus on listening to the
+                          voice of the patient and promoting methods for
+                          engaging consumers in managing their health and health
+                          care. He has served as a member of the Harvard and
+                          Yale CAHPS research teams for 25 years, and currently
+                          serves as the senior advisor for the national CAHPS
+                          Database which he directed for 22 years. Mr. Shaller
+                          led the technical assistance team on patient
+                          experience for the national Aligning Forces for
+                          Quality program, and is an Executive Board and
+                          founding member of the Patient Experience Policy
+                          Forum. He has served on many national health care
+                          advisory panels and is a frequent writer and presenter
+                          on health care quality and patient engagement
+                          strategies. He received his B.A. from Kalamazoo
+                          College and holds a Master's degree in public affairs
+                          from the Humphrey School of Public Affairs at the
+                          University of Minnesota.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/joann.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Joann Sorra, PhD</p>
+                        <p class="small">
+                          Associate Director Center for Healthcare Delivery
+                          Research and Evaluation
+                        </p>
+                        <p class="small">
+                          <span class="strong">Joann Sorra</span> is an
+                          industrial-organizational psychologist and Associate
+                          Director at Westat in the Center for Healthcare
+                          Delivery Research and Evaluation with over 25 years of
+                          experience conducting organizational and health
+                          services research. Her research has focused on patient
+                          safety and safety culture; patient and caregiver
+                          experience; survey methodology and psychometrics;
+                          program implementation and evaluation; and
+                          implementation science. She is the Project Director
+                          for the AHRQ contract that supports CAHPS and the
+                          Surveys on Patient Safety Culture. She is a reviewer
+                          for numerous healthcare journals and on the editorial
+                          board for the Journal for Healthcare Quality. Dr.
+                          Sorra is a Fellow of the American Psychological
+                          Association (APA) and the Society for Industrial and
+                          Organizational Psychology (SIOP).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/stern.png" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Amy Stern, PhD</p>
+                        <p class="small">
+                          Director of Operations and Commercial Survey Programs
+                          at Massachusetts Health Quality Partners (MHQP)
+                        </p>
+                        <p class="small">
+                          <span class="strong">Amy Stern</span> is responsible
+                          for developing, managing, and overseeing the
+                          organization’s administrative and operational
+                          processes and procedures. She also provides oversight
+                          and management of MHQP’s commercial survey projects,
+                          particularly its flagship statewide commercial Patient
+                          Experience Survey Program. Prior to joining MHQP, Amy
+                          served as Research Manager at the Center for the
+                          Evaluation of Value and Risk in Health (CEVR) at Tufts
+                          Medical Center with direct oversight of its
+                          infrastructure and research activities. She has over
+                          25 years of experience in leading health service
+                          research projects, with a focus on improving
+                          healthcare delivery and patient experiences of care.
+                          Amy received a PhD in Gerontology at the University of
+                          Massachusetts Boston, a MA in Gerontology from the
+                          University of Pennsylvania and her BS in Human
+                          Development and Family Studies from Cornell
+                          University.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/vangorp.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Stacy Van Gorp, PhD, MA</p>
+                        <!-- <p class="small">Director of Operations and Commercial Survey Programs at Massachusetts Health Quality Partners (MHQP)</p> -->
+                        <p class="small">
+                          <span class="strong">Dr. Stacy Van Gorp</span> is the
+                          co-founder and partner of See What I Mean, a
+                          consulting, research, and organizational design firm
+                          with a mission of helping organizations gain clarity
+                          and accelerate progress. This year's clients include
+                          several large and small foundations, three national
+                          nonprofit networks, and several Iowa businesses and
+                          nonprofits. Dr. Van Gorp has 25 years of experience in
+                          nonprofit leadership, philanthropy, organizational
+                          strategy and higher education. While serving many
+                          roles she always found her place at the intersection
+                          of aspiration, learning and action. Stacy enjoyed a
+                          global education at the University of Northern Iowa
+                          and later researched innovation, trust and change
+                          resistance while earning her Ph.D. at the University
+                          of Iowa. Stacy lives in Cedar Falls with her husband
+                          Chris and 16 year old twins both of whom have cystic
+                          fibrosis.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="block50 section-materials" id="Contact">
+        <div class="heros bumpdown">
+          <div class="bottom-pic-first">
+            <div class="d-flex flex-column align-items-center">
+              <h2
+                class="
+                  landing-sec-H
+                  text-center
+                  purple
+                  mb-0
+                "
+              >
+                Meeting Materials
+              </h2>
+              <div class="position-relative">
+              <img class="img-responsive square" src="img/materials_quote_box.svg" alt="" />
+
+              <ul class="guide-list">
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/CAHPS Research Meeting Agenda.pdf"
+                          target="_blank"
+                          >Agenda <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/CAHPS Research Meeting Participant Tip Sheet.pdf"
+                          target="_blank"
+                          >Participant Tip Sheet
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="guide pt-3">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/CAHPS Research Meeting Participant List.pdf"
+                          target="_blank"
+                          >Participant List <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/CAHPS Research Speaker Bios.pdf"
+                          target="_blank"
+                          >Speaker Bios <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom-pic">
+            <div class="d-flex flex-column align-items-center">
+              <h2
+                class="
+                  landing-sec-H
+                  text-center
+                  purple
+                  mb-0
+                "
+              >
+                Background Materials
+              </h2>
+              
+              <div class="position-relative">
+              <img class="img-responsive mat" src="img/square.svg" alt="" />
+
+              <ul class="guide-list">
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/What Words Convey_Milbank_March 2019.pdf"
+                          target="_blank"
+                          >What Words Convey: The Potential for Patient
+                          Narratives to Inform Quality Improvement
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/Breaking_Narrative_Ground.pdf"
+                          target="_blank"
+                          >Breaking Narrative Ground: Innovative Methods for
+                          Rigorously Eliciting and Assessing Patient Narratives
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/How Patient Comments Affect Consumers' Use of Physician Performance Measures.pdf"
+                          target="_blank"
+                          >How Patient Comments Affect Consumers’ Use of
+                          Physician Performance Measures
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img
+                      class="guide-list-I pdf submit"
+                      src="img/pdf.svg"
+                      alt=""
+                    />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a href="img/NEJM Commentary 2015.pdf" target="_blank"
+                          >Taking Patients’ Narratives about Clinicians from
+                          Anecdote to Science <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img
+                      class="guide-list-I pdf submit"
+                      src="img/pdf.svg"
+                      alt=""
+                    />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/Using NLP to Code Patient Experience Narratives - RAND RRA628-1.pdf"
+                          target="_blank"
+                          >Using Natural Language Processing to Code Patient
+                          Experience Narratives: Capabilities and Challenges
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img
+                      class="guide-list-I submit"
+                      src="img/web_link.svg"
+                      alt=""
+                    />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="https://www.ahrq.gov/cahps/surveys-guidance/item-sets/elicitation/index.html"
+                          target="_blank"
+                          >CAHPS Patient Narrative Item Sets page on the CAHPS
+                          website</a
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="across">
+          <img class="img-responsive" src="img/cahps_logo-white.svg" />
+          <img class="img-responsive second" src="img/footer_quotes.svg" />
+        </div>
+      </footer>
+
+      <div class="menu-buttons-floating">
+        <ul class="menu-buttons-floating-list">
+          <li tabindex="0" data-target="#Guide"></li>
+          <li tabindex="0" data-target="#FAQ"></li>
+          <li tabindex="0" data-target="#Privacy"></li>
+          <li tabindex="0" data-target="#Contact"></li>
+          <li tabindex="0" data-target="#Home"></li>
+        </ul>
+      </div>
+
+      <div class="menu-buttons-768">
+        <ul class="menu-buttons-768-list">
+          <li tabindex="0" data-target="#Guide"></li>
+
+          <li tabindex="0" data-target="#FAQ"></li>
+          <li tabindex="0" data-target="#Privacy"></li>
+          <li tabindex="0" data-target="#Contact"></li>
+          <li tabindex="0" data-target="#Home"></li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="vendorlibs/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendorlibs/bootstrap/js/bootstrap.min.js"
+    ></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      var speakerModal = $('.carousel').slick({
+        slidesToShow: 1,
+        dots: false,
+        arrows: true,
+        centerMode: true,
+        prevArrow:
+          "<button type='button' class='slick-prev pull-left'></button>",
+        nextArrow:
+          "<button type='button' class='slick-next pull-right'></button>",
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        speed: 0,
+        useCSS: false,
+        useTransform: false,
+        waitForAnimate: false,
+        centerPadding: '12px',
+        adaptiveHeight: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              centerPadding: '48px',
+              adaptiveHeight: false,
+            },
+          },
+        ],
+      });
+
+      $('.modal').on('shown.bs.modal', function (e) {
+        $('html').addClass('modal-open');
+        var slideID = Number(e.relatedTarget.dataset.cid);
+        var singleview = e.relatedTarget.dataset.singleview;
+        speakerModal.slick('slickGoTo', slideID, false);
+        if (!!singleview) {
+          $('.slick-slider').addClass('hide-arrows');
+        }
+      });
+
+      $('.modal').on('hidden.bs.modal', function (e) {
+        $('html').removeClass('modal-open');
+        $('.slick-slider').removeClass('hide-arrows');
+      });
+    </script>
+  </body>
+</html>

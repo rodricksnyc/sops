@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+    />
+    <title>
+      Consumer Assessment of Healthcare Providers and Systems (CAHPS)
+    </title>
+    <link rel="stylesheet" href="css/events.css" />
+    <link rel="stylesheet" href="vendorlibs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendorlibs/font-awesome-pro/css/all.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/firebasejs/9.1.2/firebase.js"></script> -->
+    <!-- <script type="module">
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserSessionPersistence  } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAb6bhfNgPB-_6OxR87Va5a5comyciFjvM",
+        authDomain: "cahps2021.firebaseapp.com",
+        projectId: "cahps2021",
+        storageBucket: "cahps2021.appspot.com",
+        messagingSenderId: "1090067740879",
+        appId: "1:1090067740879:web:b1f86b5a3702e8874cdfba"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+
+      onAuthStateChanged(auth, (user) => {
+        if (user){
+          if ( location.href.includes("html") ){
+            location.href = location.href.replace("index", "agenda");
+          }else{
+            location.pathname = location.pathname + "agenda.html";
+          }
+        }else{
+          console.log("not signed in");
+        }
+      });
+
+
+
+      window.signin = ()=>{
+        var password = document.getElementById('password').value
+
+
+        setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+          return signInWithEmailAndPassword(auth, "cahps@westat.com", password)
+            .then((userCredential) => {
+              if ( location.href.includes("html") ){
+                location.pathname = location.href.replace("index", "agenda");
+              }else{
+                location.pathname = location.pathname + "agenda.html";
+              }
+            })
+            .catch((error) => {
+              window.yes = error;
+              console.log("signin error", error);
+              if (error.code === "auth/wrong-password"){
+                alert("incorrect password");
+              }else{
+                alert("login failed");
+              }
+            })
+        })
+      }
+
+      console.log(app, auth);
+    </script> -->
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main>
+      <header class="landing">
+        <div class="container">
+          <h1>
+            Advancing the Science and Implementation of Patient Narratives
+          </h1>
+        </div>
+      </header>
+      <div class="container-fluid pt-5 margins">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+          <img
+            src="img/cahps_logo.svg"
+            class="img-responsive logo"
+            alt="Consumer Assessment of Healthcare Providers and Systems (CAHPS) logo"/>
+            <br>
+            <br>
+
+          <h2 style="margin-bottom:0">
+            Register for November 16 Webcast: An Update on the CAHPS Patient Narrative Item Sets
+          </h2>
+          <br>
+          <h3 style="margin-top:0">
+            Tuesday, November 16<br />1:00 PM ET
+          </h3>
+          <br>
+          <a href="https://westat.webex.com/mw3300/mywebex/default.do?nomenu=true&siteurl=westat&service=6&rnd=0.36404409330962273&main_url=https%3A%2F%2Fwestat.webex.com%2Fec3300%2Feventcenter%2Fevent%2FeventAction.do%3FtheAction%3Ddetail%26%26%26EMK%3D4832534b00000005365b9f485e34dda8e0db64123f8bf8efce95d0c39c509456302c1494fd258d20%26siteurl%3Dwestat%26confViewID%3D209969808127588755%26encryptTicket%3DSDJTSwAAAAUbf_bW8Yv6OY3anqI9kwKJ3PXribQV1p11lvbCZrC2uQ2%26" target="_blank"><h4>Register Now</h4></a>
+          <br>
+          <p>In August 2021, AHRQ released the final version of the Patient Narrative Item Set for the Consumer Assessment of Healthcare Providers and Systems (CAHPS) Clinician & Group Survey. These open-ended questions enable survey users to systematically collect detailed comments from patients about their healthcare experiences. In this AHRQ webcast, CAHPS researchers will present the narrative items for both the 3.1 and 4.0 (beta) versions of the Clinician & Group Survey and answer questions about using them. They will also preview Narrative Item Sets in development for the CAHPS Health Plan Survey and the Child HCAHPS Survey.</p>
+          <p style="color: #542185;margin-bottom:.25em;font-size:1.5rem;font-weight: 500;">Speakers:</p>
+          <ul>
+            <li><span style="font-weight: 500;">Caren Ginsberg, Ph.D.</span>, Agency for Healthcare Research and Quality</li>
+            <li><span style="font-weight: 500;">Steven Martino, Ph.D.</span>, RAND</li>
+            <li><span style="font-weight: 500;">Mark Schlesinger, Ph.D.</span>, Yale School of Public Health</li>
+            <li><span style="font-weight: 500;">Dale Shaller, M.P.A. (Moderator)</span>, Shaller Consulting Group</li>
+          </ul>
+          <p>Learn more about the <a href="https://secure-web.cisco.com/1ifFlKjk_jDzOKQDlNpMDWMlRUe52V9z71UkMb6wD7jMKc3MPosm7J46CLU2UxuF5pKW9O7w6FE1Ly9BbUGyySt4cPN6oJuUWQKu4iYXSLqevWNVQfRvLEvjULCHxDADjYq7G6sk5XDDuFyX4uTl20cOhd96TJmUfY1eyo2T2xmq-jjP-EjKwvWRKII_BM7hCturvO6gZWm_5F1g7rE-6yvIYyNnB09_SV6aoZ_bTJpkkrCouNatUEexO5dkJVXT-/https%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDEsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMTEwMjcuNDc5NjA3NTEiLCJ1cmwiOiJodHRwczovL3d3dy5haHJxLmdvdi9jYWhwcy9zdXJ2ZXlzLWd1aWRhbmNlL2l0ZW0tc2V0cy9lbGljaXRhdGlvbi9pbmRleC5odG1sIn0.k_MLz4phmF33evmX7nzhYV57DJQrwZ3EPs534x-lF-g%2Fs%2F908062531%2Fbr%2F114708204506-l" target="_blank">CAHPS Patient Narrative Item Sets</a>.</p>
+          <p>For questions, please contact the CAHPS User Network at <a href="mailto:cahps1@westat.com">cahps1@westat.com</a> or 1-800-492-9261.</p>
+
+          <!-- <div id="passw" class="pb-5">
+            <div>
+              <input
+                maxlength="22"
+                size="8"
+                class="auth-control access"
+                placeholder="Enter Password"
+                type="password"
+                id="password"
+                onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"
+              />
+
+              <button
+                value="Login"
+                type="button"
+                class="btn-login"
+                id="button"
+                type="button"
+                value="Submit"
+                onclick="signin()"
+              >
+                Submit
+              </button>
+            </div>
+          </div> -->
+        </div>
+
+      <div class="col-lg-6  col-md-12 col-sm-12">
+        <img src="img/landing_quotes.svg" class="img-responsive quotes" alt="">
+
+
+      </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="vendorlibs/jquery.min.js"></script>
+    <script>
+      $('a').on('keyup', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+        if (code == 9) {
+          $(this).css('outline', 'dashed 3px #ff9c00');
+        }
+      });
+      $('a').on('focusout', function () {
+        $(this).css('outline', 'none');
+      });
+
+      $('button').on('keyup', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+        if (code == 9) {
+          $(this).css('outline', 'dashed 3px #ff9c00');
+        }
+      });
+      $('button').on('focusout', function () {
+        $(this).css('outline', 'none');
+      });
+
+      $('input').on('keyup', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+        if (code == 9) {
+          $(this).css('outline', 'dashed 3px #ff9c00');
+        }
+      });
+      $('input').on('focusout', function () {
+        $(this).css('outline', 'none');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+    />
+    <title>
+      Consumer Assessment of Healthcare Providers and Systems (CAHPS)
+    </title>
+    <link rel="stylesheet" href="css/events.css" />
+    <link rel="stylesheet" href="vendorlibs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendorlibs/font-awesome-pro/css/all.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/firebasejs/9.1.2/firebase.js"></script> -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserSessionPersistence  } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAb6bhfNgPB-_6OxR87Va5a5comyciFjvM",
+        authDomain: "cahps2021.firebaseapp.com",
+        projectId: "cahps2021",
+        storageBucket: "cahps2021.appspot.com",
+        messagingSenderId: "1090067740879",
+        appId: "1:1090067740879:web:b1f86b5a3702e8874cdfba"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+
+      onAuthStateChanged(auth, (user) => {
+        if (user){
+          if ( location.href.includes("html") ){
+            location.href = location.href.replace("index", "agenda");
+          }else{
+            location.pathname = location.pathname + "agenda.html";
+          }
+        }else{
+          console.log("not signed in");
+        }
+      });
+
+      // setPersistence(auth, browserSessionPersistence)
+      //   .then(() => {
+      //     return signInWithEmailAndPassword(auth, "cahps@westat.com", "testit1")
+      //       .then((userCredential) => {
+      //         console.log("gredentials", userCredential);
+      //       })
+      //       .catch((error) => {
+      //         console.log("error", error);
+      //       })
+      //   })
+
+      window.signin = ()=>{
+        var password = document.getElementById('password').value
+
+
+        setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+          return signInWithEmailAndPassword(auth, "cahps@westat.com", password)
+            .then((userCredential) => {
+              if ( location.href.includes("html") ){
+                location.pathname = location.href.replace("index", "agenda");
+              }else{
+                location.pathname = location.pathname + "agenda.html";
+              }
+            })
+            .catch((error) => {
+              window.yes = error;
+              console.log("signin error", error);
+              if (error.code === "auth/wrong-password"){
+                alert("incorrect password");
+              }else{
+                alert("login failed");
+              }
+            })
+        })
+      }
+
+      // signInWithEmailAndPassword(auth, "cahps@westat.com", "testit2")
+      //   .then((userCredential) => {
+      //     console.log("gredentials", userCredential);
+      //   })
+      //   .catch((error) => {
+      //     console.log("error", error);
+      //   })
+
+
+      console.log(app, auth);
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main>
+      <header class="landing">
+        <div class="container">
+          <h1>
+            Advancing the Science and Implementation of Patient Narratives
+          </h1>
+        </div>
+      </header>
+      <div class="container main-wrapper first">
+        <div class="main-container">
+          <img
+            src="img/cahps_logo.svg"
+            class="img-responsive logo"
+            alt="Consumer Assessment of Healthcare Providers and Systems (CAHPS) logo"
+          />
+
+          <h2>
+            A Virtual Invitational Research Meeting Sponsored by the U.S. Agency
+            for Healthcare Research and Quality
+          </h2>
+          <h3>
+            Thursday, October 7, 2021<br />11:00 am - 4:00 pm ET via WebEx
+          </h3>
+
+          <div id="passw" class="pb-5">
+            <div>
+              <input
+                maxlength="22"
+                size="8"
+                class="auth-control access"
+                placeholder="Enter Password"
+                type="password"
+                id="password"
+                onkeydown="if (event.keyCode == 13) document.getElementById('button').click()"
+              />
+
+              <button
+                value="Login"
+                type="button"
+                class="btn-login"
+                id="button"
+                type="button"
+                value="Submit"
+                onclick="signin()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="vendorlibs/jquery.min.js"></script>
+    <script>
+      $('a').on('keyup', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+        if (code == 9) {
+          $(this).css('outline', 'dashed 3px #ff9c00');
+        }
+      });
+      $('a').on('focusout', function () {
+        $(this).css('outline', 'none');
+      });
+
+      $('button').on('keyup', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+        if (code == 9) {
+          $(this).css('outline', 'dashed 3px #ff9c00');
+        }
+      });
+      $('button').on('focusout', function () {
+        $(this).css('outline', 'none');
+      });
+
+      $('input').on('keyup', function (e) {
+        var code = e.keyCode ? e.keyCode : e.which;
+        if (code == 9) {
+          $(this).css('outline', 'dashed 3px #ff9c00');
+        }
+      });
+      $('input').on('focusout', function () {
+        $(this).css('outline', 'none');
+      });
+    </script>
+  </body>
+</html>

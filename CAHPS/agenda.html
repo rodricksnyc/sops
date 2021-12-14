@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <title>Consumer Assessment of Healthcare Providers and Systems (CAHPS)</title>
+    <link rel="stylesheet" href="vendorlibs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="vendorlibs/font-awesome-pro/css/all.css">
+    <link rel="stylesheet" href="vendorlibs/normalize.min.css">
+   <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="module">
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserSessionPersistence  } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAb6bhfNgPB-_6OxR87Va5a5comyciFjvM",
+        authDomain: "cahps2021.firebaseapp.com",
+        projectId: "cahps2021",
+        storageBucket: "cahps2021.appspot.com",
+        messagingSenderId: "1090067740879",
+        appId: "1:1090067740879:web:b1f86b5a3702e8874cdfba"
+      };
+
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+
+      onAuthStateChanged(auth, (user) => {
+        if (user){
+          console.log("user logged in");//, user);
+        }else{
+          location.pathname = location.pathname.replace("agenda", "index");
+        }
+      });
+
+
+      window.signin = ()=>{
+        setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+          return signInWithEmailAndPassword(auth, "cahps@westat.com", "testit")
+            .then((userCredential) => {
+              console.log("gredentials", userCredential);
+            })
+            .catch((error) => {
+              console.log("error", error);
+            })
+        })
+      }
+
+
+      console.log(app, auth);
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid overflow-hidden position-relative">
+
+      <section class="block0">
+        <div class="hero-img-container heros" id="Home">
+          <img src="img/cahps_logo.svg" class="img-responsive logo" alt="Consumer Assessment of Healthcare Providers and Systems (CAHPS) logo">
+          <div class="hero-img">
+            <div class="landing-panel">
+              <h3 class="text-center"><b><span style="color:#212529;font-size:2.6rem;padding-bottom:1em">Webcast:</span></b></h3>
+              <h3 class="text-center"><b>An Update on the CAHPS Patient Narrative Item Sets</b></h3>
+              <h4 style="font-size:1.5em">Tuesday, November 16, 2021 <span class="purple">|</span> 1:00 PM ET</h4>
+              <p>In August 2021, AHRQ released the final version of the Patient Narrative Item Set for the Consumer Assessment of Healthcare Providers and Systems (CAHPS) Clinician & Group Survey. These open-ended questions enable survey users to systematically collect detailed comments from patients about their healthcare experiences. In this AHRQ webcast, CAHPS researchers will present the narrative items for both the 3.1 and 4.0 (beta) versions of the Clinician & Group Survey and answer questions about using them. They will also preview Narrative Item Sets in development for the CAHPS Health Plan Survey and the Child HCAHPS Survey.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="menu-buttons">
+        <ul class="menu-buttons-list">
+          <!-- <li tabindex="0" data-target="#Guide" class="objective"></li> -->
+          <li tabindex="0" data-target="#FAQ" class="agenda"></li>
+          <li tabindex="0" data-target="#Privacy" class="speakers"></li>
+          <li tabindex="0" data-target="#Contact" class="materials"></li>
+        </ul>
+      </div>
+
+
+      <section class="block5">
+        <div class="hero-img-agenda-bottom"></div>
+        <div id="FAQ" class="landing-sec heros">
+          <div class="guide-overlay container">
+            <!-- <h2 class="landing-sec-H text-center purple">An Update on the CAHPS Patient Narrative Item Sets</h2> -->
+
+
+            <div class="agendaBubble">
+
+              <div class="aquaBubble">
+                <h3 class="charcoal mb-0">Webcast Agenda</h3>
+                <p class="purple"></p>
+              </div>
+
+
+              <div class="whiteBubble" style="margin-top:8em">
+                <!-- <a class="join" href="https://secure-web.cisco.com/1ifFlKjk_jDzOKQDlNpMDWMlRUe52V9z71UkMb6wD7jMKc3MPosm7J46CLU2UxuF5pKW9O7w6FE1Ly9BbUGyySt4cPN6oJuUWQKu4iYXSLqevWNVQfRvLEvjULCHxDADjYq7G6sk5XDDuFyX4uTl20cOhd96TJmUfY1eyo2T2xmq-jjP-EjKwvWRKII_BM7hCturvO6gZWm_5F1g7rE-6yvIYyNnB09_SV6aoZ_bTJpkkrCouNatUEexO5dkJVXT-/https%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDEsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMTEwMjcuNDc5NjA3NTEiLCJ1cmwiOiJodHRwczovL3d3dy5haHJxLmdvdi9jYWhwcy9zdXJ2ZXlzLWd1aWRhbmNlL2l0ZW0tc2V0cy9lbGljaXRhdGlvbi9pbmRleC5odG1sIn0.k_MLz4phmF33evmX7nzhYV57DJQrwZ3EPs534x-lF-g%2Fs%2F908062531%2Fbr%2F114708204506-l" target="_blank">Join Session</a> -->
+
+                <div class="tan">
+                  <p class="strong mb-0">
+                    <span class="purple">1:00 PM ET</span> An Update on the CAHPS Patient Narrative Item Sets</p>
+                </div>
+                <!-- <p style="margin-bottom:-1em;margin-top:1em;">Speakers:</p> -->
+                <ul>
+
+                  <li>Welcome from AHRQ<br><span class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="0"
+                      data-singleview="true"
+                      >Caren Ginsberg, Ph.D.</span>, Agency for Healthcare Research and Quality
+                  </li>
+
+                  <li>Updated Narrative Item Sets for the CAHPS Clinician & Group Survey<br><span class="session-speaker" data-toggle="modal" data-target="#exampleModalCenter" data-cid="1"   data-singleview="true">
+                    Steven Martino, Ph.D.</span>, RAND</li>
+
+
+                  <li>Preview of New Narrative Item Sets in Development<br><span class="session-speaker"
+                    data-toggle="modal"
+                    data-target="#exampleModalCenter"
+                    data-cid="2"
+                    data-singleview="true">Mark Schlesinger, Ph.D.</span>, Yale School of Public Health</li>
+                  <li>Webcast Moderator<br>
+                    <span
+                      class="session-speaker"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                      data-cid="3"
+                      data-singleview="true"
+                      >Dale Shaller, M.P.A.</span>, Shaller Consulting Group
+                    <br />
+                    <a
+                      class="ml-5 mt-2 d-inline-block"
+                      href="img/CAHPS Patient Narrative Items Sets Webcast_11.16.21.pdf"
+                      target="_blank"
+                      >Download Presentation <i class="fal fa-download"></i
+                    ></a>
+                  </li>
+
+                </ul>
+
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <section class="block20" id="Privacy">
+        <div class="heros">
+          <div class="container guide-overlay">
+            <h2 class="landing-sec-H text-center purple mb-0">Speakers</h2>
+            <p class="text-center mt-0">
+              Select a speaker to view more about them.
+            </p>
+
+            <div class="row">
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="0"
+                >
+                  <img src="img/ginsberg.jpg" class="img-responsive" /><br />
+                  Caren Ginsberg
+                </button>
+              </div>
+
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="1"
+                >
+                  <img src="img/martino.jpg" class="img-responsive" /><br />
+                  Steven Martino
+                </button>
+              </div>
+
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="2"
+                >
+                  <img src="img/sch.jpg" class="img-responsive" /><br />
+                  Mark Schlesinger
+                </button>
+              </div>
+
+              <div
+                class="
+                  col-lg-3 col-md-6 col-sm-6 col-xs-12
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <button
+                  type="button"
+                  class="btn text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  data-cid="3"
+                >
+                  <img src="img/shaller.jpg" class="img-responsive" /><br />
+                  Dale Shaller
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- <div class="hero-img-guide"></div> -->
+      </section>
+
+      <!-- Modal -->
+      <div
+        class="modal"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+        data-bs-backdrop="static"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="wrapper">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <img class="img-responsive" src="img/close_X.svg" />
+                </button>
+                <div class="carousel">
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img
+                        src="img/ginsberg.jpg"
+                        class="img-responsive first"
+                      />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Caren Ginsberg, PhD, CPXP</p>
+
+                        <p class="small">
+                          <span class="strong">Caren Ginsberg</span> directs the
+                          Agency for Healthcare Research and Quality’s (AHRQ)
+                          work on the Consumer Assessment of Healthcare
+                          Providers and Systems (CAHPS®) and Surveys on Patient
+                          Safety Culture™ (SOPS®). An anthropologist and
+                          demographer, Dr. Ginsberg has broad-based experience
+                          in patient experience, patient safety, and public
+                          health. In her position at AHRQ, she focuses on
+                          program development, implementation, operations and
+                          evaluation, with specialty in survey design and
+                          development, and qualitative evaluation and
+                          assessment. Previously, she held positions at the
+                          Centers for Medicare and Medicaid Services (CMS),
+                          Westat, and the National Quality Forum.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/martino.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Steven Martino, PhD</p>
+                        <p class="small">
+                          Senior Behavioral Scientist at the RAND Corporation
+                        </p>
+                        <p class="small">
+                          For more than 15 years, Steven Martino has been
+                          involved in the design and evaluation of survey-based
+                          measures of patient experience and research to
+                          strengthen the science of public reporting of
+                          healthcare quality data to inform consumer choice and
+                          quality improvement initiatives. Steven has been a
+                          member of the CAHPS Consortium since 2006 and has led
+                          RAND’s Reports sub-team since 2012. For the past 10
+                          years, he has been part of a multidisciplinary team
+                          that has pioneered the development of (a) criteria for
+                          assessing the fidelity of elicited narratives, (b)
+                          protocols for eliciting patient narratives as part of
+                          large-scale patient experience surveys, (c) approaches
+                          for extracting information from patient narratives
+                          essential for quality improvement, and (d) approaches
+                          to presenting this information to healthcare consumers
+                          to increase patient engagement and inform their
+                          healthcare decision-making as well as to healthcare
+                          providers to help inform quality improvement efforts.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/sch.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Mark Schlesinger, PhD</p>
+                        <!-- <p class="small">Senior Behavioral/Social Scientist at RAND with a Ph.D. in Social/Health Psychology from Carnegie Mellon University</p> -->
+                        <p class="small">
+                          <span class="strong">Mark Schlesinger</span> is a
+                          wayward economist often mistaken for a political
+                          scientist or social psychologist. For the past two
+                          decades, he has studied patient experience and
+                          patients’ responses to problematic medical encounters;
+                          including ways of enhancing the scope, clarity, and
+                          influence of patient voice. Dr. Schlesinger’s other
+                          research interests include the determinants of public
+                          opinion about health and social policy, the influence
+                          of bounded rationality on medical consumers and
+                          consumerism, the impact of economic insecurity on
+                          political attitudes and public well-being, and the
+                          role of nonprofit organizations in American health
+                          care. Dr. Schlesinger is Professor of Health Policy
+                          and a fellow of the Institution for Social and Policy
+                          Studies at Yale University, immediate past-Chair of
+                          the Department of Health Policy and Management and a
+                          former editor of the Journal of Health Policy,
+                          Politics and Law. He has consulted to ten federal
+                          agencies, several dozen state governments, and a score
+                          of nonprofit organizations. His favored sports include
+                          uncompetitive volleyball and unlighted table tennis.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="d-flex justify-content-center">
+                      <img src="img/shaller.jpg" class="img-responsive first" />
+                      <div class="quoteBubble">
+                        <p class="purple strong">Dale Shaller, MPA</p>
+                        <p class="small">Principal, Shaller Consulting Group</p>
+                        <p class="small">
+                          <span class="strong">Dale Shaller</span> is Principal
+                          of Shaller Consulting Group, a health policy analysis
+                          and management consulting practice based in
+                          Stillwater, Minnesota. He has devoted nearly four
+                          decades to the design, implementation, and evaluation
+                          of health care quality measurement and improvement
+                          programs, with a special focus on listening to the
+                          voice of the patient and promoting methods for
+                          engaging consumers in managing their health and health
+                          care. He has served as a member of the Harvard and
+                          Yale CAHPS research teams for 25 years, and currently
+                          serves as the senior advisor for the national CAHPS
+                          Database which he directed for 22 years. Mr. Shaller
+                          led the technical assistance team on patient
+                          experience for the national Aligning Forces for
+                          Quality program, and is an Executive Board and
+                          founding member of the Patient Experience Policy
+                          Forum. He has served on many national health care
+                          advisory panels and is a frequent writer and presenter
+                          on health care quality and patient engagement
+                          strategies. He received his B.A. from Kalamazoo
+                          College and holds a Master's degree in public affairs
+                          from the Humphrey School of Public Affairs at the
+                          University of Minnesota.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="block50 section-materials" id="Contact">
+        <div class="heros bumpdown">
+
+
+          <div class="bottom-pic">
+            <div class="d-flex flex-column align-items-center">
+              <h2
+                class="
+                  landing-sec-H
+                  text-center
+                  purple
+                  mb-0
+                "
+              >
+                Background Materials
+              </h2>
+
+              <div class="position-relative">
+              <img class="img-responsive mat" src="img/square.svg" alt="" />
+
+              <ul class="guide-list">
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/What Words Convey_Milbank_March 2019.pdf"
+                          target="_blank"
+                          >What Words Convey: The Potential for Patient
+                          Narratives to Inform Quality Improvement
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/Breaking_Narrative_Ground.pdf"
+                          target="_blank"
+                          >Breaking Narrative Ground: Innovative Methods for
+                          Rigorously Eliciting and Assessing Patient Narratives
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img class="guide-list-I pdf" src="img/pdf.svg" alt="" />
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/How Patient Comments Affect Consumers' Use of Physician Performance Measures.pdf"
+                          target="_blank"
+                          >How Patient Comments Affect Consumers’ Use of
+                          Physician Performance Measures
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img
+                      class="guide-list-I pdf submit"
+                      src="img/pdf.svg"
+                      alt=""
+                    />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a href="img/NEJM Commentary 2015.pdf" target="_blank"
+                          >Taking Patients’ Narratives about Clinicians from
+                          Anecdote to Science <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li>
+
+           <li class="guide">
+                  <div class="guide-wrapper">
+                    <img
+                      class="guide-list-I pdf submit"
+                      src="img/pdf.svg"
+                      alt=""
+                    />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="img/Using NLP to Code Patient Experience Narratives - RAND RRA628-1.pdf"
+                          target="_blank"
+                          >Using Natural Language Processing to Code Patient Experience Narratives: Capabilities and Challenges
+                          <i class="fal fa-download"></i></a
+                      ></span>
+                    </p>
+                  </div>
+                </li> 
+
+                <li class="guide">
+                  <div class="guide-wrapper">
+                    <img
+                      class="guide-list-I submit"
+                      src="img/web_link.svg"
+                      alt=""
+                    />
+
+                    <p class="guide-list-T">
+                      <span class="guide-list-H"
+                        ><a
+                          href="https://www.ahrq.gov/cahps/surveys-guidance/item-sets/elicitation/index.html"
+                          target="_blank"
+                          >CAHPS Patient Narrative Item Sets page on the CAHPS
+                          website</a
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="across">
+          <img class="img-responsive" src="img/cahps_logo-white.svg" />
+          <img class="img-responsive second" src="img/footer_quotes.svg" />
+        </div>
+      </footer>
+
+      <div class="menu-buttons-floating">
+        <ul class="menu-buttons-floating-list">
+          <!-- <li tabindex="0" data-target="#Guide"></li> -->
+          <li tabindex="0" data-target="#FAQ"></li>
+          <li tabindex="0" data-target="#Privacy"></li>
+          <li tabindex="0" data-target="#Contact"></li>
+          <li tabindex="0" data-target="#Home"></li>
+        </ul>
+      </div>
+
+      <div class="menu-buttons-768">
+        <ul class="menu-buttons-768-list">
+          <!-- <li tabindex="0" data-target="#Guide"></li> -->
+
+          <li tabindex="0" data-target="#FAQ"></li>
+          <li tabindex="0" data-target="#Privacy"></li>
+          <li tabindex="0" data-target="#Contact"></li>
+          <li tabindex="0" data-target="#Home"></li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="vendorlibs/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="vendorlibs/bootstrap/js/bootstrap.min.js"
+    ></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      var speakerModal = $('.carousel').slick({
+        slidesToShow: 1,
+        dots: false,
+        arrows: true,
+        centerMode: true,
+        prevArrow:
+          "<button type='button' class='slick-prev pull-left'></button>",
+        nextArrow:
+          "<button type='button' class='slick-next pull-right'></button>",
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        speed: 0,
+        useCSS: false,
+        useTransform: false,
+        waitForAnimate: false,
+        centerPadding: '12px',
+        adaptiveHeight: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              centerPadding: '48px',
+              adaptiveHeight: false,
+            },
+          },
+        ],
+      });
+
+      $('.modal').on('shown.bs.modal', function (e) {
+        $('html').addClass('modal-open');
+        var slideID = Number(e.relatedTarget.dataset.cid);
+        var singleview = e.relatedTarget.dataset.singleview;
+        speakerModal.slick('slickGoTo', slideID, false);
+        if (!!singleview) {
+          $('.slick-slider').addClass('hide-arrows');
+        }
+      });
+
+      $('.modal').on('hidden.bs.modal', function (e) {
+        $('html').removeClass('modal-open');
+        $('.slick-slider').removeClass('hide-arrows');
+      });
+    </script>
+  </body>
+</html>
